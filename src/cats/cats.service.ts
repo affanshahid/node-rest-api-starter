@@ -10,11 +10,11 @@ export class CatsService {
     private readonly catsRepository: CatsRepository
   ) { }
 
-  getCats(): Promise<Cat[]> {
+  findAll(): Promise<Cat[]> {
     return this.catsRepository.find();
   }
 
-  async getCatById(id: string): Promise<Cat> {
+  async findById(id: string): Promise<Cat> {
     const cat = await this.catsRepository.findOne(id);
 
     if (cat == null) {
@@ -24,18 +24,18 @@ export class CatsService {
     return cat;
   }
 
-  async createCat(createCatData: CreateCatDto): Promise<Cat> {
-    const cat = this.catsRepository.create(createCatData);
+  async create(createCatDto: CreateCatDto): Promise<Cat> {
+    const cat = this.catsRepository.create(createCatDto);
     return this.catsRepository.save(cat);
   }
 
-  async updateCat(id: string, updateCatDto: UpdateCatDto): Promise<Cat> {
-    const cat = await this.getCatById(id);
+  async update(id: string, updateCatDto: UpdateCatDto): Promise<Cat> {
+    const cat = await this.findById(id);
     this.catsRepository.merge(cat, updateCatDto);
     return this.catsRepository.save(cat);
   }
 
-  async deleteCat(id: string): Promise<void> {
+  async delete(id: string): Promise<void> {
     await this.catsRepository.delete({ id });
   }
 }

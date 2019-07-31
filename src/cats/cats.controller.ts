@@ -14,42 +14,42 @@ export class CatsController {
 
   @Get()
   @ApiOkResponse({ type: Cat, isArray: true })
-  getCats(): Promise<Cat[]> {
-    return this.catsService.getCats();
+  findAll(): Promise<Cat[]> {
+    return this.catsService.findAll();
   }
 
   @Get(':catId')
   @ApiOkResponse({ type: Cat })
   @ApiNotFoundResponse({ description: 'Not found' })
-  getCatById(
+  findById(
     @Param('catId', new ParseUUIDPipe({ version: '4' })) catId: string
   ): Promise<Cat> {
-    return this.catsService.getCatById(catId);
+    return this.catsService.findById(catId);
   }
 
   @Post()
   @ApiCreatedResponse({ type: Cat })
-  createCat(
+  create(
     @Body() createCatDto: CreateCatDto
   ): Promise<Cat> {
-    return this.catsService.createCat(createCatDto);
+    return this.catsService.create(createCatDto);
   }
 
   @Put(':catId')
   @ApiOkResponse({ type: Cat })
   @ApiNotFoundResponse({ description: 'Not found' })
-  updateCat(
+  update(
     @Body() updateCatDto: UpdateCatDto,
     @Param('catId', new ParseUUIDPipe({ version: '4' })) catId: string,
   ): Promise<Cat> {
-    return this.catsService.updateCat(catId, updateCatDto);
+    return this.catsService.update(catId, updateCatDto);
   }
 
   @Delete(':catId')
   @ApiOkResponse({ description: 'Cat successfully deleted' })
-  deleteCat(
+  delete(
     @Param('catId', new ParseUUIDPipe({ version: '4' })) catId: string,
   ): Promise<void> {
-    return this.catsService.deleteCat(catId);
+    return this.catsService.delete(catId);
   }
 }
