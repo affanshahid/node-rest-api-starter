@@ -1,0 +1,14 @@
+host: REST_API_HOST
+port: REST_API_PORT
+
+postgresConfiguration:
+  host: PGHOST
+  port: PGPORT
+  username: PGUSER
+  password: PGPASSWORD
+  database: PGDATABASE
+
+swagger:
+  endpoint: SWAGGER_ENDPOINT
+  title: SWAGGER_TITLE
+  description: SWAGGER_DESCRIPTION

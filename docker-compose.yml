@@ -1,0 +1,26 @@
+version: '3'
+services:
+    rest-api:
+      build: .
+      container_name: "rest-api"
+      ports:
+         - "3000:3000"
+      environment:
+         - REST_API_HOST=0.0.0.0 
+         - REST_API_PORT=3000
+         - PGHOST=rest-api-db
+         - PGPORT=5432
+         - PGUSER=postgres
+         - PGPASSWORD=thisshouldbeasecret
+         - PGDATABASE=your_database
+      restart: always
+
+    rest-api-db:
+      image: postgres
+      container_name: rest-api-db
+      ports:
+         - 5432:5432
+      environment:
+         - POSTGRES_PASSWORD=thisshouldbeasecret
+         - POSTGRES_DB=your_database
+      restart: always

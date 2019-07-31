@@ -1,0 +1,16 @@
+host: localhost
+port: 3000
+
+postgresConfiguration:
+  type: postgres
+  host: localhost
+  port: 5432
+  username: postgres
+  password: postgres
+  database: your_database
+  synchronize: true
+
+swagger:
+  endpoint: api
+  title: Rest API
+  description: A modern REST API boilerplate for Node.js with Typescript
