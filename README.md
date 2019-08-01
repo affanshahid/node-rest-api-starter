@@ -23,6 +23,7 @@ docker-compose up -d
 # testing
 npm run test
 npm run test:watch
+npm run test:e2e
 
 # coverage report
 npm run test:coverage
