@@ -1,7 +1,7 @@
 import { Test } from '@nestjs/testing';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConnectionOptions } from 'typeorm';
-import { initializeTestSchema } from '../../tests/scripts';
+import { initializeTestSchema } from '../../tests/utils';
 import { ConfigModule } from '../config/config.module';
 import { ConfigService } from '../config/config.service';
 import { CatsRepository } from './cats.repository';

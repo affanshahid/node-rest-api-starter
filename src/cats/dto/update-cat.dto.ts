@@ -5,10 +5,10 @@ export class UpdateCatDto {
   @ApiModelPropertyOptional()
   @IsOptional()
   @IsNotEmpty()
-  name!: string;
+  name?: string;
 
   @ApiModelPropertyOptional()
   @IsOptional()
   @IsNotEmpty()
-  breed!: string;
+  breed?: string;
 }

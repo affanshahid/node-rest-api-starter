@@ -4,7 +4,6 @@ import { CatsController } from './cats.controller';
 import { CatsRepository } from './cats.repository';
 import { CatsService } from './cats.service';
 import { CreateCatDto } from './dto/create-cat.dto';
-import { UpdateCatDto } from './dto/update-cat.dto';
 
 describe('CatsController', () => {
   let catsController: CatsController;
@@ -94,7 +93,7 @@ describe('CatsController', () => {
     it('should update and return a cat using catsService', async () => {
       const id = 'id1';
 
-      const dto: UpdateCatDto = {
+      const dto = {
         name: 'Cat 1',
         breed: 'Breed 1'
       };

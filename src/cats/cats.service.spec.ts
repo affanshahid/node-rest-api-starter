@@ -103,7 +103,7 @@ describe('CatsService', () => {
   describe('update', () => {
     it('should update a cat using the catsRepository', async () => {
       const id = 'id1';
-      const dto: UpdateCatDto = {
+      const dto = {
         name: 'Cat 1',
         breed: 'Breed 1'
       };

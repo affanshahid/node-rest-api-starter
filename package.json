@@ -10,7 +10,9 @@
     "dev": "nodemon",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage && opener ./coverage/lcov-report/index.html"
+    "test:coverage": "jest --coverage && opener ./coverage/lcov-report/index.html",
+    "test:e2e": "jest --config ./tests/jest.e2e.config.js",
+    "clean": "rimraf build && rimraf coverage"
   },
   "keywords": [],
   "author": "Affan Shahid",
@@ -35,14 +37,19 @@
     "@types/jest": "^24.0.16",
     "@types/node": "^12.6.8",
     "@types/pg": "^7.4.14",
+    "@types/supertest": "^2.0.8",
+    "@types/uuid": "^3.4.5",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
     "eslint": "^6.1.0",
     "jest": "^24.8.0",
     "nodemon": "^1.19.1",
     "opener": "^1.5.1",
+    "rimraf": "^2.6.3",
+    "supertest": "^4.0.2",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.3.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "uuid": "^3.3.2"
   }
 }
