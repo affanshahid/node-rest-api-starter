@@ -4,8 +4,8 @@ import uuid from 'uuid';
 import { Cat } from '../src/cats/cat.entity';
 import { CatsRepository } from '../src/cats/cats.repository';
 import { CreateCatDto } from '../src/cats/dto/create-cat.dto';
-import { createTestAppAndModule, initializeTestSchema } from './utils';
 import { UpdateCatDto } from '../src/cats/dto/update-cat.dto';
+import { createTestAppAndModule, initializeTestSchema } from './utils';
 
 beforeAll(async () => {
   await initializeTestSchema();
