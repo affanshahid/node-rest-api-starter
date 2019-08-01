@@ -39,8 +39,8 @@ export class CatsController {
   @ApiOkResponse({ type: Cat })
   @ApiNotFoundResponse({ description: 'Not found' })
   update(
-    @Body() updateCatDto: UpdateCatDto,
     @Param('catId', new ParseUUIDPipe({ version: '4' })) catId: string,
+    @Body() updateCatDto: UpdateCatDto,
   ): Promise<Cat> {
     return this.catsService.update(catId, updateCatDto);
   }

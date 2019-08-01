@@ -16,6 +16,20 @@
             ],
             "port": 9229,
             "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Test",
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register",
+                "--inspect",
+                "node_modules/jest/bin/jest.js",
+                "--runInBand"
+            ],
+            "port": 9229,
+            "console": "integratedTerminal"
         }
     ]
 }

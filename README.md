@@ -19,6 +19,13 @@ npm run build && npm start
 
 # using docker
 docker-compose up -d
+
+# testing
+npm run test
+npm run test:watch
+
+# coverage report
+npm run test:coverage
 ```
 
 Visit http://localhost:3000/api to view swagger documentation
