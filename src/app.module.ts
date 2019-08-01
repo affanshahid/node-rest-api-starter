@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConnectionOptions } from 'typeorm';
+import { CatsModule } from './cats/cats.module';
 import { ConfigModule } from './config/config.module';
 import { ConfigService } from './config/config.service';
-import { CatsModule } from './cats/cats.module';
 
 @Module({
   imports: [
@@ -10,7 +11,7 @@ import { CatsModule } from './cats/cats.module';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
-        ...configService.get<TypeOrmModuleOptions>('postgresConfiguration'),
+        ...configService.get<ConnectionOptions>('postgresConfiguration'),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
       })
     }),

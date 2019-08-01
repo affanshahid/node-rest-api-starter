@@ -34,6 +34,7 @@
     "@types/config": "0.0.34",
     "@types/jest": "^24.0.16",
     "@types/node": "^12.6.8",
+    "@types/pg": "^7.4.14",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
     "eslint": "^6.1.0",

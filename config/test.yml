@@ -1,0 +1,3 @@
+postgresConfiguration:
+  schema: '__test__'
+  synchronize: true

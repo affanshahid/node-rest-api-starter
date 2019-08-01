@@ -24,7 +24,7 @@
             "runtimeArgs": [
                 "-r",
                 "ts-node/register",
-                "--inspect",
+                "--inspect-brk",
                 "node_modules/jest/bin/jest.js",
                 "--runInBand"
             ],

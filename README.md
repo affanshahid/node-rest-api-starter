@@ -31,5 +31,4 @@ npm run test:coverage
 Visit http://localhost:3000/api to view swagger documentation
 
 #### TODO
-- Add unit testing support
 - Add e2e testing support
