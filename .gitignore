@@ -91,8 +91,8 @@ typings/
 build
 
 # Local config
-config/local.yml
-config/local.yaml
+config/local*
+config/local*
 
 # Temporary files
 tmp

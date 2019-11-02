@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prebuild": "npm run clean",
     "start": "node build/main.js",
-    "build": "tsc",
+    "build": "nest build",
     "lint": "eslint src/**/*.ts",
-    "dev": "nodemon",
+    "dev": "nest start --watch",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage && opener ./coverage/lcov-report/index.html",
@@ -32,6 +33,7 @@
     "typeorm": "^0.2.20"
   },
   "devDependencies": {
+    "@nestjs/cli": "^6.9.0",
     "@nestjs/testing": "^6.8.5",
     "@types/config": "0.0.35",
     "@types/jest": "^24.0.21",
@@ -43,7 +45,6 @@
     "@typescript-eslint/parser": "^2.6.0",
     "eslint": "^6.6.0",
     "jest": "^24.9.0",
-    "nodemon": "^1.19.4",
     "opener": "^1.5.1",
     "rimraf": "^3.0.0",
     "supertest": "^4.0.2",

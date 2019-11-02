@@ -1,8 +1,0 @@
-{
-    "watch": [
-        "src",
-        "config"
-    ],
-    "ext": "ts,yml,yaml",
-    "exec": "ts-node --log-error --files src/main.ts"
-}
