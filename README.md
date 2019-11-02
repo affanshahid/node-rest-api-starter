@@ -30,6 +30,3 @@ npm run test:coverage
 ```
 
 Visit http://localhost:3000/api to view swagger documentation
-
-#### TODO
-- Achieve 100% coverage
