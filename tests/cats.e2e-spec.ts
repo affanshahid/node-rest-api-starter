@@ -11,16 +11,18 @@ describe('CatsModule (e2e)', () => {
   let app: INestApplication;
   let catsRepository: CatsRepository;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     app = await createTestApp();
-
     catsRepository = app.get(CatsRepository);
     await app.init();
   });
 
+  afterAll(async () => {
+    await app.close();
+  })
+
   afterEach(async () => {
     await catsRepository.delete({});
-    await app.close();
   });
 
   describe('GET /cats', () => {
