@@ -19,7 +19,7 @@ describe('CatsModule (e2e)', () => {
 
   afterAll(async () => {
     await app.close();
-  })
+  });
 
   afterEach(async () => {
     await catsRepository.delete({});
