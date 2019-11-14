@@ -4,16 +4,14 @@ module.exports = {
       tsConfig: './tsconfig.test.json'
     }
   },
-  'moduleFileExtensions': [
-    'js',
-    'json',
-    'ts'
+  collectCoverageFrom: [
+    'src/**/*.ts',
+    '!src/main.ts'
   ],
-  'rootDir': 'src',
-  'testRegex': '.spec.ts$',
-  'transform': {
-    '^.+\\.(t|j)s$': 'ts-jest'
-  },
-  'coverageDirectory': '../coverage',
-  'testEnvironment': 'node'
+  moduleFileExtensions: ['js', 'json', 'ts'],
+  testEnvironment: 'node',
+  "testMatch": [
+    "**/tests/**/*.e2e-spec.(ts|js)"
+  ],
+  preset: 'ts-jest'
 };

@@ -1,3 +1,3 @@
 postgresConfiguration:
-  schema: '__tests__'
-  synchronize: true
+  database: your_tests_database
+

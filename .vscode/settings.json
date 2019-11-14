@@ -9,5 +9,6 @@
         "typescriptreact"
     ],
     "eslint.enable": true,
-    "typescript.preferences.quoteStyle": "single"
+    "typescript.preferences.quoteStyle": "single",
+    "typescript.tsdk": "node_modules\\typescript\\lib"
 }

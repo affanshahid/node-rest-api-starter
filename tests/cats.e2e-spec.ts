@@ -5,28 +5,21 @@ import { Cat } from '../src/cats/cat.entity';
 import { CatsRepository } from '../src/cats/cats.repository';
 import { CreateCatDto } from '../src/cats/dto/create-cat.dto';
 import { UpdateCatDto } from '../src/cats/dto/update-cat.dto';
-import { createTestAppAndModule, initializeTestSchema } from './utils';
-
-beforeAll(async () => {
-  await initializeTestSchema();
-});
+import { createTestApp } from './utils';
 
 describe('CatsModule (e2e)', () => {
   let app: INestApplication;
   let catsRepository: CatsRepository;
 
   beforeEach(async () => {
-    const appAndModule = await createTestAppAndModule();
-    const module = appAndModule[1];
-    app = appAndModule[0];
+    app = await createTestApp();
 
-    catsRepository = module.get<CatsRepository>(CatsRepository);
+    catsRepository = app.get(CatsRepository);
     await app.init();
-
-    await catsRepository.delete({});
   });
 
   afterEach(async () => {
+    await catsRepository.delete({});
     await app.close();
   });
 
